@@ -1,0 +1,31 @@
+<script>start("/Users/pusita/Downloads/tryweb/myproject/django/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("django","django",1,640,"640 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow("docs","docs",1,704,"704 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow("extras","extras",1,128,"128 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow(".git",".git",1,384,"384 B",1746460613,"5/5/68 22:56:53");</script>
+<script>addRow(".github",".github",1,224,"224 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("js_tests","js_tests",1,160,"160 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow("scripts","scripts",1,96,"96 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow("tests","tests",1,7104,"6.9 kB",1745167641,"20/4/68 23:47:21");</script>
+<script>addRow(".tx",".tx",1,96,"96 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("AUTHORS","AUTHORS",0,44057,"43.0 kB",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("CONTRIBUTING.rst","CONTRIBUTING.rst",0,1115,"1.1 kB",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow(".DS_Store",".DS_Store",0,8196,"8.0 kB",1745167720,"20/4/68 23:48:40");</script>
+<script>addRow(".editorconfig",".editorconfig",0,701,"701 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("eslint.config.mjs","eslint.config.mjs",0,2198,"2.1 kB",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow(".flake8",".flake8",0,277,"277 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow(".gitattributes",".gitattributes",0,392,"392 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow(".git-blame-ignore-revs",".git-blame-ignore-revs",0,410,"410 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow(".gitignore",".gitignore",0,373,"373 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("Gruntfile.js","Gruntfile.js",0,369,"369 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("INSTALL","INSTALL",0,237,"237 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("LICENSE","LICENSE",0,1552,"1.5 kB",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("LICENSE.python","LICENSE.python",0,14256,"13.9 kB",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("MANIFEST.in","MANIFEST.in",0,265,"265 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("package.json","package.json",0,383,"383 B",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow(".pre-commit-config.yaml",".pre-commit-config.yaml",0,638,"638 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("pyproject.toml","pyproject.toml",0,2119,"2.1 kB",1745167640,"20/4/68 23:47:20");</script>
+<script>addRow("README.rst","README.rst",0,2017,"2.0 kB",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow(".readthedocs.yml",".readthedocs.yml",0,410,"410 B",1745167639,"20/4/68 23:47:19");</script>
+<script>addRow("tox.ini","tox.ini",0,1883,"1.8 kB",1745167641,"20/4/68 23:47:21");</script>
