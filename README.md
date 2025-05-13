@@ -30,8 +30,13 @@
 
 ## **User Stories**
 
-- **ในฐานะนักเรียน**  //
-  **As a student**, I want to find information about portfolio-building workshops and camps, so that I can register camps that match my interests.  //
+
+- **ในฐานะนักเรียน**
+
+  
+  **As a student**, I want to find information about portfolio-building workshops and camps, so that I can register camps that match my interests.
+
+
   *ในฐานะนักเรียน ฉันต้องการค้นหาข้อมูลเกี่ยวกับเวิร์กช็อปและค่ายสร้างพอร์ตโฟลิโอ เพื่อให้ฉันสามารถสมัครค่ายที่ตรงกับความสนใจได้*
 
 - **ในฐานะผู้จัดค่าย/ผู้ประชาสัมพันธ์**  
