@@ -169,8 +169,44 @@
 
 1. **Clone โปรเจกต์จาก GitHub**:
    ```bash
-   git clone 
-   cd dsi202_2025
-![Uploading image.png…]()
+   git clone https://github.com/bellochertam/dsi202_2025.git
+   cd dsi202_2025```
+
+
+2. ทำการเพิ่ม code ในส่วนของ setting.py
+``` SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": ["profile", "email"],
+        "AUTH_PARAMS": {"access_type": "online"},
+        "APP": {
+            "client_id": "Client ID ที่สร้างขึ้นมา",
+            "secret": "Client secret ที่สร้างขึ้นมา",
+            "key": "",
+        },
+    }
+}````
+
+
+
+3. ทำการ Build Docker Container
+``` docker compose build```
+
+
+4. รัน Web Application
+```docker compose up ```
+
+
+1.	5. เปิด Browser หน้าเว็บ ที่
+http://localhost:8000/
+
+
+##  **YOUTUBE VDO LINK  **
+
+
+
+
+
+
+
 
 
