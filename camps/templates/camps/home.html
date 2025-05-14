@@ -1,0 +1,303 @@
+{% extends 'camps/base.html' %} {% block content %}
+
+<!-- Hero Section -->
+<section
+  class="relative min-h-[80vh] bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-20 px-4 overflow-hidden"
+>
+  <!-- Particles Background -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div
+    class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center"
+  >
+    <div class="space-y-6 animate-fade-in-up text-center md:text-left">
+      <h1
+        class="text-4xl md:text-5xl font-extrabold leading-tight text-cyan-400 drop-shadow-lg"
+      >
+        Welcome to <span class="text-white">Peddle Camp</span>
+      </h1>
+      <p class="text-lg text-slate-200">
+        The Space where you discover
+        <strong class="text-yellow-400">YOURSELF</strong>
+      </p>
+      <a
+        href="#carousel"
+        class="inline-block bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 hover:scale-110 hover:rotate-1 transition-transform font-semibold py-3 px-6 rounded-full shadow-xl cta-button"
+      >
+        <section class="bg-[#0f172a] py-16 px-4">
+          <div
+            class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl ring-2 ring-cyan-500 animate-fade-in-up"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              class="w-full h-auto object-cover"
+            >
+              <source
+                src="/Users/pusita/Downloads/vecteezy_cloud-computing-brain-ai-technology-data-transfer-bits_24148821.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </section>
+      </a>
+    </div>
+    <div class="hidden md:block animate-fade-in-up">
+      <video
+        autoplay
+        muted
+        loop
+        class="w-full rounded-xl shadow-xl ring-2 ring-cyan-400"
+      >
+        <source
+          src="/Users/pusita/Downloads/vecteezy_cloud-computing-brain-ai-technology-data-transfer-bits_24148821.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- Local Video Highlight Section -->
+<section class="bg-[#0f172a] py-16 px-4">
+  <div
+    class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl ring-2 ring-cyan-500 animate-fade-in-up"
+  >
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      class="w-full h-auto object-cover"
+    >
+      <source src="" type="video/mp4" />
+    </video>
+  </div>
+</section>
+<!-- Close Soon Camps -->
+<section class="bg-[#0f172a] py-16" id="carousel">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-cyan-300 mb-10">
+      ค่ายที่ใกล้ปิดรับสมัคร
+    </h2>
+    <div class="relative overflow-hidden">
+      <div
+        id="carouselInner"
+        class="flex transition-transform duration-500 ease-in-out"
+      >
+        {% for camp in close_soon_camps %}
+        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+          <a
+            href="{% url 'camp_detail' camp.id %}"
+            class="group block bg-slate-800 border border-cyan-500 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 hover:rotate-[1deg]"
+          >
+            {% if camp.image %}
+            <img
+              src="{{ camp.image.url }}"
+              alt="{{ camp.title }}"
+              class="w-full h-40 object-cover rounded mb-3 transition-all duration-300 group-hover:shadow-xl"
+            />
+            {% else %}
+            <img
+              src="https://via.placeholder.com/300x160?text=No+Image"
+              alt="No image"
+              class="w-full h-40 object-cover rounded mb-3"
+            />
+            {% endif %}
+            <h3 class="text-xl font-semibold text-cyan-300">
+              {{ camp.title }}
+            </h3>
+            <p class="text-sm text-slate-300">
+              {{ camp.description|truncatewords:15 }}
+            </p>
+            <p class="text-sm text-slate-400 mt-1">
+              ⏳ ปิดรับ: {{ camp.application_deadline }}
+            </p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      <button
+        onclick="prevSlide()"
+        class="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-indigo-600 text-xl px-3 py-1 rounded-full shadow-md hover:scale-110 transition-transform"
+      >
+        ‹
+      </button>
+      <button
+        onclick="nextSlide()"
+        class="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-indigo-600 text-xl px-3 py-1 rounded-full shadow-md hover:scale-110 transition-transform"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Camps by Category -->
+<section
+  id="category-camps"
+  class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20"
+>
+  <div class="max-w-7xl mx-auto px-4 space-y-14">
+    {% for category_slug, category_info in camps_by_category.items %}
+    <div
+      class="bg-slate-900 rounded-xl border border-cyan-700 p-6 shadow-xl animate-fade-in-up"
+    >
+      <div class="flex justify-between items-center mb-5">
+        <h2 class="text-2xl font-bold text-cyan-400">
+          {{ category_info.display_name }}
+        </h2>
+        <a
+          href="{% url 'category_camps' category_slug %}"
+          class="text-sm text-cyan-200 hover:underline"
+          >ดูค่ายทั้งหมด →</a
+        >
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for camp in category_info.camps %}
+        <a
+          href="{% url 'camp_detail' camp.id %}"
+          class="block bg-slate-800 border border-slate-700 rounded-lg p-4 hover:border-cyan-400 hover:shadow-2xl transition-transform transform hover:scale-105"
+        >
+          {% if camp.image %}
+          <img
+            src="{{ camp.image.url }}"
+            alt="{{ camp.title }}"
+            class="w-full h-36 object-cover rounded mb-3"
+          />
+          {% else %}
+          <img
+            src="https://via.placeholder.com/200"
+            alt="Placeholder"
+            class="w-full h-36 object-cover rounded mb-3"
+          />
+          {% endif %}
+          <h3 class="text-lg font-bold text-cyan-300 mb-1">{{ camp.title }}</h3>
+          <p class="text-sm text-slate-300">
+            {{ camp.description|truncatewords:15 }}
+          </p>
+          <p class="text-sm text-slate-400 mt-1">
+            👥 {{ camp.participants }} • 📍 {{ camp.location }}
+          </p>
+
+          <p class="text-lg font-bold text-cyan-300 mb-1">
+            <strong>ค่าใช้จ่าย:</strong> {{ camp.fee }}
+          </p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#38bdf8" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      move: { enable: true, speed: 2 },
+    },
+    interactivity: {
+      events: { onhover: { enable: true, mode: "repulse" } },
+    },
+  });
+</script>
+
+<!-- Scroll Reveal -->
+<script>
+  const revealEls = document.querySelectorAll(".scroll-reveal");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  revealEls.forEach((el) => {
+    el.classList.add(
+      "opacity-0",
+      "translate-y-6",
+      "transition-all",
+      "duration-700"
+    );
+    observer.observe(el);
+  });
+</script>
+
+<!-- Carousel Script -->
+<script>
+  let currentIndex = 0;
+  const carousel = document.getElementById("carouselInner");
+  const slides = carousel.children;
+  const slidesPerPage = 2;
+  function updateSlide() {
+    const slideWidth = slides[0].offsetWidth + 16;
+    const newTransform = -currentIndex * slideWidth;
+    carousel.style.transform = `translateX(${newTransform}px)`;
+  }
+  function nextSlide() {
+    if (currentIndex < slides.length - slidesPerPage) {
+      currentIndex++;
+      updateSlide();
+    }
+  }
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlide();
+    }
+  }
+  window.addEventListener("resize", updateSlide);
+  window.addEventListener("load", updateSlide);
+</script>
+
+<!-- Extra Styles -->
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Lato&display=swap");
+  body {
+    font-family: "Lato", sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .cta-button {
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>
+
+{% endblock %}

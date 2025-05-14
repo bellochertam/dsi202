@@ -1,0 +1,150 @@
+{% extends 'camps/base.html' %}
+{% block content %}
+<div class="max-w-6xl mx-auto py-10 px-4">
+  <h2 class="text-4xl text-center text-white mb-10 tracking-tight animate-fade-in">
+    {{ camp.title }}
+  </h2>
+
+  <div class="bg-white shadow-lg rounded-2xl overflow-hidden gap-8 p-6 md:p-10">
+    <div class="flex justify-center">
+      {% if camp.image %}
+        <img src="{{ camp.image.url }}" alt="Camp Image" class="w-full max-w-md h-auto rounded-xl shadow-md">
+      {% else %}
+        <img src="https://via.placeholder.com/500x300" alt="Placeholder" class="w-full max-w-md h-auto rounded-xl shadow-md">
+      {% endif %}
+    </div>
+
+  <div class="space-y-3 text-[16px] leading-relaxed pt-4">
+  <div class="flex gap-2">
+    <span class="flex text-indigo-600 text-sm flex-shrink-0">
+      <i class="fas fa-align-left mr-1"></i>
+      <span class="font-semibold text-indigo-800">รายละเอียด:</span>
+    </span>
+    <p class="flex-1">{{ camp.description|linebreaks }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-yellow-500 text-sm flex-shrink-0">
+      <i class="fas fa-users mr-1"></i>
+      <span class="font-semibold text-yellow-800">จำนวนผู้เข้าร่วม:</span>
+    </span>
+    <p class="flex-1">{{ camp.participants }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-green-700 text-sm flex-shrink-0">
+      <i class="fas fa-map-marker-alt mr-1"></i>
+      <span class="font-semibold text-green-700">สถานที่:</span>
+    </span>
+    <p class="flex-1">{{ camp.location }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-blue-500 text-sm flex-shrink-0">
+      <i class="fas fa-money-bill-wave mr-1"></i>
+      <span class="font-semibold text-blue-600">ค่าใช้จ่าย:</span>
+    </span>
+    <p class="flex-1">{{ camp.fee }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-purple-600 text-sm flex-shrink-0">
+      <i class="fas fa-calendar-alt mr-1"></i>
+      <span class="font-semibold text-purple-800">วันที่เริ่มค่าย:</span>
+    </span>
+    <p class="flex-1">{{ camp.camp_start_date }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-pink-600 text-sm flex-shrink-0">
+      <i class="fas fa-calendar-check mr-1"></i>
+      <span class="font-semibold text-pink-800">วันที่สิ้นสุดค่าย:</span>
+    </span>
+    <p class="flex-1">{{ camp.camp_end_date }}</p>
+  </div>
+
+  <div class="flex gap-2">
+    <span class="flex items-center text-red-600 text-sm flex-shrink-0">
+      <i class="fas fa-hourglass-end mr-1"></i>
+      <span class="font-semibold text-red-800">ปิดรับสมัคร:</span>
+    </span>
+    <p class="flex-1">{{ camp.application_deadline }}</p>
+  </div>
+
+      <div class="flex justify-center gap-6 mt-8">
+        <a href="fb-messenger://share?link={{ request.build_absolute_uri|urlencode }}&app_id=YOUR_FB_APP_ID" data-web-url="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}" class="share-btn bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full flex items-center justify-center shadow-md transition-transform duration-200 hover:scale-110" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a href="twitter://post?message={{ camp.title|urlencode }}%20{{ request.build_absolute_uri|urlencode }}" data-web-url="https://twitter.com/intent/tweet?text={{ camp.title|urlencode }}&url={{ request.build_absolute_uri|urlencode }}" class="share-btn bg-blue-400 hover:bg-blue-500 text-white p-3 rounded-full flex items-center justify-center shadow-md transition-transform duration-200 hover:scale-110" aria-label="Share on Twitter">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="line://msg/text/{{ camp.title|urlencode }}%20{{ request.build_absolute_uri|urlencode }}" data-web-url="https://line.me/R/share?text={{ camp.title|urlencode }}%20{{ request.build_absolute_uri|urlencode }}" class="share-btn bg-green-500 hover:bg-green-600 text-white p-3 rounded-full flex items-center justify-center shadow-md transition-transform duration-200 hover:scale-110" aria-label="Share on Line">
+          <i class="fab fa-line text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+    <a href="https://forms.google.com" target="_blank"
+  class="bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 hover:brightness-110 text-white py-3 px-6 rounded-xl text-lg font-semibold shadow-md transition-transform duration-200 hover:scale-105">
+  ลงทะเบียนผ่าน Google Forms
+</a>
+
+    <a href="https://forms.google.com" target="_blank"
+      class="bg-gradient-to-r from-green-600 to-blue-600 hover:brightness-110 text-white py-3 px-6 rounded-xl text-lg font-semibold shadow-md transition-transform duration-200 hover:scale-105">
+      กลับสู่หน้าหลัก
+    </a>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButtons = document.querySelectorAll('.share-btn');
+
+    shareButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const mobileUrl = button.getAttribute('href');
+        const webUrl = button.getAttribute('data-web-url');
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+          window.location.href = mobileUrl;
+          setTimeout(() => {
+            if (document.hidden) return; 
+            window.location.href = webUrl;
+          }, 1000);
+        } else {
+          window.open(webUrl, '_blank');
+        }
+      });
+    });
+  });
+</script>
+</main>
+{% endblock %}
