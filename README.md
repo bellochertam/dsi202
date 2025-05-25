@@ -186,18 +186,19 @@ SOCIALACCOUNT_PROVIDERS = {
         },
     }
 }
-
-
+```
 
 
 3. ทำการ Build Docker Container
 ```bash
  docker compose build
+```
 
 
 4. รัน Web Application
 ```bash
-docker compose up 
+docker compose up
+```
 
 
 5. เปิด Browser หน้าเว็บ ที่
