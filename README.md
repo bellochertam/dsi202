@@ -8,6 +8,7 @@
 **นักศึกษาชั้นปีที่ 2** วิทยาลัยสหวิทยาการ สาขาวิทยาศาสตร์และนวัตกรรมข้อมูล มหาวิทยาลัยธรรมศาสตร์  
 
 **วิดีโอประกอบการใช้งาน**:  https://youtu.be/3vnfSB9KlQQ?si=t3j5o8M1M5PB32W8
+Github : https://github.com/bellochertam/dsi202_2025.git
 
 
 ---
@@ -205,7 +206,8 @@ docker compose up
 http://localhost:8000/
 
 
-##  **YOUTUBE VDO LINK https://youtu.be/3vnfSB9KlQQ?si=t3j5o8M1M5PB32W8  ** 
+##  **YOUTUBE VDO LINK   ** 
+https://youtu.be/3vnfSB9KlQQ?si=t3j5o8M1M5PB32W8
 
 
 
